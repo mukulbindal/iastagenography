@@ -1,0 +1,257 @@
+.content{
+  margin-bottom: 0px;
+}
+
+body {
+  			font-family:'Montserrat';
+        font: black;
+        background-image: url('rocky-mountain-1.jpg') ;
+}
+.logo{
+  float: left;
+position: relative;  
+	top:5px;         
+	left:40px;        
+}
+.logo img{
+  width:60px;
+  height:60px; 
+  border-top-left-radius:30%;
+  border-bottom-right-radius:30%;
+}
+
+.logo-text
+{
+  float:left;
+position:relative;
+top:14px;
+margin-left:50px;
+}
+a:hover
+{
+	color:blue;
+}
+a{
+color:black;
+}
+a:link {
+		text-decoration: none;
+}
+.menu-options{
+position:relative;
+float:left;
+font-size:20px;
+font-color:black;
+margin-left:30px;
+top:25px;
+}
+
+.getstarted {
+   position:relative;
+   float:right;
+  font-size:18px;
+  margin-right: 40px;
+  top:12px;
+   background-color:#4CAF50;
+   color: white;
+   padding: 10px 20px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+}
+.sign-in-out
+{
+  position:relative;
+  float: left;
+  font-size:20px;
+  margin-left: 40px;
+  top:18px;
+
+}
+.in {
+  background-color: #4CAF50;
+  border:none;
+  color: white;
+  padding: 7px 20px;
+  border-top-right-radius: 15%;
+  border-bottom-left-radius: 15%;
+}
+.out {
+  background-color: #C45050;
+  border:none;
+  color: white;
+  padding: 7px 20px;
+  border-top-right-radius: 15%;
+  border-bottom-left-radius: 15%;
+}	
+.quote{
+  position:relative;
+  float:top;
+  margin-left:15%;
+  margin-top: 50px;
+}
+.quote-small
+{
+  position:relative;
+  float:top;
+  margin-left: 20%;
+}
+.searchbar{
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 60px;
+  background-color: #353b48;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.search_input{
+color: white;
+border: 0;
+outline: 0;
+background: none;
+width: 0;
+caret-color:transparent;
+line-height: 40px;
+transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input{
+padding: 0 10px;
+width: 450px;
+caret-color:red;
+transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon{
+background: white;
+color: #4CAF50;
+}
+
+.search_icon{
+height: 40px;
+width: 40px;
+float: right;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50%;
+color:white;
+}	
+.gg
+	{
+position: relative;
+float:top;
+margin-top: 10px;
+	}
+.search_input::placeholder {
+  color: white;
+  opacity: 0.7; /* Firefox */
+}
+.im1
+{
+width:100px; 
+height:100px;
+ margin-top:180px;
+ margin-left:50px;
+  transform-origin:60% center;
+   position:relative; 
+   animation:rotate 8s linear infinite;
+}
+.im2
+{
+width:100px; 
+height:100px;
+ margin-top:180px;
+ margin-left:1100px;
+  transform-origin:60% center;
+   position:relative; 
+   animation:rotate 8s linear infinite;
+}
+.im3
+{
+width:100px; 
+height:100px;
+ margin-top:-100px;
+ margin-left:300px;
+  transform-origin:60% center;
+   position:relative; 
+   animation:rotate 8s linear infinite;
+}
+.im4
+{
+width:100px; 
+height:100px;
+ margin-top:-100px;
+ margin-left:700px;
+  transform-origin:60% center;
+   position:relative; 
+   animation:rotate 8s linear infinite;
+}
+.im5
+{
+width:100px; 
+height:100px;
+ margin-top:-350px;
+ margin-left:1100px;
+  transform-origin:60% center;
+   position:relative; 
+   animation:rotate 8s linear infinite;
+}
+.im6
+{
+width:100px; 
+height:100px;
+ margin-top:-10px;
+ margin-left:100px;
+  transform-origin:60% center;
+   position:relative; 
+   animation:rotate 8s linear infinite;
+}
+.im7
+{
+width:100px; 
+height:100px;
+ margin-top:-400px;
+ margin-left:100px;
+  transform-origin:60% center;
+   position:relative; 
+   animation:rotate 8s linear infinite;
+}
+.im9
+{
+width:100px; 
+height:100px;
+ margin-top:-80px;
+ margin-left:1050px;
+  transform-origin:60% center;
+   position:relative; 
+   animation:rotate 8s linear infinite;
+}
+@keyframes rotate { 100% { transform:rotate(360deg); }
+}
+
+.content-django{
+  color:white;
+  position: relative;
+  float: top;
+  margin-top: 30px;
+}
+::placeholder{
+  color:#000;
+}
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /*height: 10%;*/
+  background-color: #194C6E;
+  color: white;
+  text-align: center;
+}
+.icons{
+  padding: 20px 20px;
+}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %} Registration {% endblock %}
+
+{% block content %}
+
+<div class = "registration-form">
+	<h1>Registration</h1>
+	<form action = "{% url 'registration' %}" method="POST">
+		{% csrf_token %}
+		<input type="text" id = "username" name="username" placeholder="Enter username" required><br>
+		<input type="text" name="first_name" placeholder="Enter First Name" required><br>
+		<input type="text" name="last_name" placeholder="Enter Last Name"><br>
+		<input type="date" name="date_of_birth" placeholder="Enter Date of Birth" ><br>
+		<input type="text" name="job_title" placeholder="Enter job title (optional)"><br>
+		<input type="text" name="department" placeholder="Enter Department (optional)"><br>
+		<input type="email" name="email" placeholder="Email" required><br>
+		<input type="text" name="contact" placeholder="Enter Mobile Number" length="12"><br>
+		<input type="password" name="password1" placeholder="Enter a strong pasword"><br>
+		<input type="password" name="password2" placeholder="re-enter your pasword"><br>
+		<input type="submit" class="submit-button" value="Register">
+	</form>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".submit-button").attr("disabled",true);
+			$("#username").keyup(function(){
+				let $username = $(this).val().trim();
+				$.getJSON(
+					"isusernameavailable",
+					{
+						username:$username
+					},
+					function(data){
+						if(data.username_exists==="true")
+							{
+								$(".submit-button").attr("disabled",true);
+							}
+							else
+							{
+								$(".submit-button").attr("disabled",false);
+							}
+					}
+					)
+			});
+		});
+	</script>
+</div>
+
+{% endblock %}

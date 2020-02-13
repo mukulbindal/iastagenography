@@ -1,0 +1,1 @@
+web: gunicorn steganography_social_media.wsgi --log-file -
