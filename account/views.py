@@ -8,7 +8,7 @@ import os
 import hashlib
 import binascii
 from chat.models import Room
-
+# postgresql
 def chat_key(key , *args):
     """Hash a password for storing."""
     password = key 

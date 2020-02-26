@@ -232,13 +232,13 @@ height:100px;
 }
 
 .content-django{
-  color:white;
+  color:#222;
   position: relative;
   float: top;
   margin-top: 30px;
 }
 ::placeholder{
-  color:#000;
+  color:#111;
 }
 
 
@@ -256,10 +256,7 @@ height:100px;
   padding: 20px 20px;
 }
 
-body {
-  font-family:calibri;
-  background-color: lightblue;
-}
+
 
 a {
   color: #92badd;
@@ -314,7 +311,7 @@ input[type=button], input[type=submit]{
 input {
   background-color: #f6f6f6;
   border: none;
-  color: #0d0d0d;
+
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -327,9 +324,7 @@ input {
 
 
 
-input[type=text]:placeholder {
-  color: #cccccc;
-}
+
 
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
@@ -385,4 +380,8 @@ input[type=text]:placeholder {
 
 .fadeIn.fourth {
   animation-delay: 1s;
+}
+input:required {
+    background:hsl(180, 50%, 90%);
+    border:1px solid #999;
 }

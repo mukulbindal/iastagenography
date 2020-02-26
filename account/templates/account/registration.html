@@ -2,25 +2,166 @@
 {% block title %} Registration {% endblock %}
 
 {% block content %}
+<div>
+<div class="wrapper fadeInDown">
+<div class="">
+    <div class="">
+        <div class="row justify-content-center">
+            <div class="">
+                    <div class="card">
+                        <div class="card-header">Register</div>
+                        <div class="card-body">
+							<form action = "{% url 'registration' %}" method="POST" onsubmit="return validateForm()">
+  								{% csrf_token %}
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Username</label>
+                                    <div class="">
+                                        <input type="text" pattern="[a-z][a-zA-Z0-9]*" title="Username should start with a lowercase letter without any special charcters" id="username" class="form-control" name="username" required>
+                                        <div class="warning-username">
 
-<div class = "registration-form">
-	<h1>Registration</h1>
-	<form action = "{% url 'registration' %}" method="POST">
-		{% csrf_token %}
-		<input type="text" id = "username" name="username" placeholder="Enter username" required><br>
-		<input type="text" name="first_name" placeholder="Enter First Name" required><br>
-		<input type="text" name="last_name" placeholder="Enter Last Name"><br>
-		<input type="date" name="date_of_birth" placeholder="Enter Date of Birth" ><br>
-		<input type="text" name="job_title" placeholder="Enter job title (optional)"><br>
-		<input type="text" name="department" placeholder="Enter Department (optional)"><br>
-		<input type="email" name="email" placeholder="Email" required><br>
-		<input type="text" name="contact" placeholder="Enter Mobile Number" length="12"><br>
-		<input type="password" name="password1" placeholder="Enter a strong pasword"><br>
-		<input type="password" name="password2" placeholder="re-enter your pasword"><br>
-		<input type="submit" class="submit-button" value="Register">
-	</form>
+                                    </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">First Name</label>
+                                    <div class="">
+                                        <input type="text" pattern="[a-zA-Z][a-zA-Z]*" title="Please enter first name correctly" id="fname" class="form-control" name="first_name" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Last Name</label>
+                                    <div class="">
+                                        <input type="text" pattern="[a-zA-Z][a-zA-Z]*" title="Please enter last name correctly" id="lname" class="form-control" name="last_name" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Date of birth</label>
+                                    <div class="">
+                                        <input type="date" id="dob" class="form-control" name = "date_of_birth" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Job Title</label>
+                                    <div class="">
+                                        <input type="text" pattern="[a-zA-Z][a-zA-Z]*" title="Please enter in correct format" id="job" name = "job_title" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Department</label>
+                                    <div class="">
+                                        <input type="text" pattern="[a-zA-Z][a-zA-Z]*" title="Please enter in correct format"id="dept" class="form-control" name="department">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Email address</label>
+                                    <div class="">
+                                        <input type="text" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" title="Please enter valid email id" id="email" class="form-control" name="email" required>
+                                    </div>
+                                </div>
+								<div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Mobile no</label>
+                                    <div class="">
+                                        <input type="text" pattern="^((\+){1}91){1}[6-9]{1}[0-9]{9}$" title="Please enter mobile number correctly.e.g- +91xxxxxxxxxx" id="mob" class="form-control" name="mob" required>
+                                    </div>
+                                </div>
+
+								<div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Password</label>
+                                    <div class="">
+                                        <input type="password" id="password1" class="form-control" name="password1" required>
+
+                                    </div>
+                                </div>
+
+								<div class="form-group row">
+                                    <label class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+                                    <div class="">
+                                        <input type="password"   id="password2" class="form-control" name="password2" required>
+                                        <div class="warning-password"></div>
+                                    </div>
+                                </div>
+
+                                    <div class="form-group row">
+<!--                                        <button type="submit" class="btn btn-primary">-->
+<!--                                        Register-->
+<!--                                        </button>-->
+										<input type="submit" class="submit-button" value="Register">
+                                    </div>
+                                    </form>
+                                </div>
+         					</div>
+         				</div>
+         			</div>
+         		</div>
+         </div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--	<form action = "{% url 'registration' %}" method="POST">-->
+<!--		{% csrf_token %}-->
+<!--		<input type="text" id = "username" name="username" placeholder="Enter username" required><br>-->
+<!--		<input type="text" name="first_name" placeholder="Enter First Name" required><br>-->
+<!--		<input type="text" name="last_name" placeholder="Enter Last Name"><br>-->
+<!--		<input type="date" name="date_of_birth" placeholder="Enter Date of Birth" ><br>-->
+<!--		<input type="text" name="job_title" placeholder="Enter job title (optional)"><br>-->
+<!--		<input type="text" name="department" placeholder="Enter Department (optional)"><br>-->
+<!--		<input type="email" name="email" placeholder="Email" required><br>-->
+<!--		<input type="text" name="contact" placeholder="Enter Mobile Number" length="12"><br>-->
+<!--		<input type="password" name="password1" placeholder="Enter a strong pasword"><br>-->
+<!--		<input type="password" name="password2" placeholder="re-enter your pasword"><br>-->
+<!--		<input type="submit" class="submit-button" value="Register">-->
+<!--	</form>-->
 	<script type="text/javascript">
+
 		$(document).ready(function(){
+		    $("#password2").keyup(
+		        function(){
+		            var p1 = $("#password1").val();
+		            var p2 = $("#password2").val();
+		            if(p1===p2){
+		                $(".submit-button").attr("disabled",false);
+		                $(".warning-password").html("Passwords Match");
+		                $(".warning-password").css("color","blue");
+		            }
+		            else{
+		            $(".submit-button").attr("disabled",true);
+		                $(".warning-password").html("Passwords do not match");
+		                $(".warning-password").css("color","red");
+
+		            }
+		        });
+		        $("#password1").keyup(
+		        function(){
+		            var p1 = $("#password1").val();
+		            var p2 = $("#password2").val();
+		            if(p2==="")return false;
+		            if(p1===p2){
+		                $(".submit-button").attr("disabled",false);
+		                $(".warning-password").html("Passwords Match");
+		                $(".warning-password").css("color","blue");
+		            }
+		            else{
+		            $(".submit-button").attr("disabled",true);
+		                $(".warning-password").html("Passwords do not match");
+		                $(".warning-password").css("color","red");
+
+		            }
+		        });
 			$(".submit-button").attr("disabled",true);
 			$("#username").keyup(function(){
 				let $username = $(this).val().trim();
@@ -32,17 +173,26 @@
 					function(data){
 						if(data.username_exists==="true")
 							{
+
 								$(".submit-button").attr("disabled",true);
+								$("#username").css("background-color","#ff6666");
+								$(".warning-username").html("Username already taken!!");
+								$(".warning-username").css("color","red");
+
 							}
 							else
 							{
 								$(".submit-button").attr("disabled",false);
+								$("#username").css("background-color","white");
+								$(".warning-username").html("Username available!!");
+								$(".warning-username").css("color","green");
 							}
 					}
 					)
 			});
+
 		});
 	</script>
-</div>
 
+</div>
 {% endblock %}
