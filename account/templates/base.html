@@ -16,7 +16,7 @@
 	
 </head>
 <body>
-<a href="{% url 'dashboard' %}">
+<a href="{% url 'dashboard' %}" style="align:left">
 <div class="logo">
 	<img src="{% static 'css/images/talkchat.jpg' %}">
 </div>
@@ -26,11 +26,11 @@
 </div>
 </a>
 <div class="menu-options">
-	<a href="abc.html" style="hover:blue;">Why talkchat?</a>
+	<a href="#" style="hover:blue;">Why talkchat?</a>
 </div>
 
 <div class="menu-options">
-	<a href="vzs.html">About Us</a>
+	<a href="#">About Us</a>
 </div>
 {% if request.session.user %}
 <div class="menu-options">
@@ -55,7 +55,7 @@ Hello {{ request.session.user}},
 
 {% endif %}
 <div class="getstarted">
-	<a href="dsf.html"><font color="white">GET STARTED</font></a>
+	<a href="#"><font color="white">GET STARTED</font></a>
 </div>
 <br>
 <br>
