@@ -16,13 +16,13 @@
 	
 </head>
 <body>
-<a href="{% url 'dashboard' %}" style="align:left">
+<a href="{% url 'dashboard' %}" style="margin-left:0px;">
 <div class="logo">
 	<img src="{% static 'css/images/talkchat.jpg' %}">
 </div>
 
 <div class="logo-text">
-	<font color = "black"><h1>talkchat</h1></font>
+	<font color = "black"><h1>TalkChat</h1></font>
 </div>
 </a>
 <div class="menu-options">
@@ -42,7 +42,7 @@
 </div>
 
 <div class="sign-in-out">
-<font color="white">
+<font color="black">
 Hello {{ request.session.user}},
 </font>
 <a class = "out" href="{% url 'logout' %}" class = "g">Logout</a>
@@ -62,7 +62,7 @@ Hello {{ request.session.user}},
 <hr>
 
 <div class="quote">
-<font size="30" color="black"><b>Messaging in different way by talkchat</b></font>
+<font size="30" color="black"><i><b>Messaging In A Different Way By TalkChat</b></i></font>
 </div>
 <br>
 <div class="quote-small">

@@ -74,7 +74,7 @@
 								<div class="form-group row">
                                     <label class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="">
-                                        <input type="password" id="password1" class="form-control" name="password1" required>
+                                        <input type="password" id="password1" class="form-control" name="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title = "Password should contain atleast one number\n one lowercase\n one uppercase \nand 8 character long" required>
 
                                     </div>
                                 </div>

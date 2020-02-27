@@ -2,12 +2,12 @@
 {% block title %} Users {% endblock %}
 
 {% block content %}
-<div class="users">
+<div class="users" >
 	<ul>
 	{% for users in all_users %}
-		<li>{{users}} 
+		<li><div  style="color:#121212;font-size:16px;"> {{users}}</div>
 			<form action="{% url 'follow' %}" method="POST">
-				<input type="hidden" name="username" value="{{users}}">
+				<input type="hidden" name="username" value="{{users}}" >
 				{% csrf_token %}
 				<input type="submit" name="" value="Follow">
 			</form>

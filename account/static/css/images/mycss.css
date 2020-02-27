@@ -3,15 +3,16 @@
 }
 
 body {
-  			font-family:'Montserrat';
-        font: black;
-        background-image: url('rocky-mountain-1.jpg') ;
+    font-family:'Montserrat';
+    font: black;
+    background-image:url('bg.jpg');
+
 }
 .logo{
   float: left;
 position: relative;  
 	top:5px;         
-	left:40px;        
+	left:40px;
 }
 .logo img{
   width:60px;
@@ -384,4 +385,9 @@ input {
 input:required {
     background:hsl(180, 50%, 90%);
     border:1px solid #999;
+}
+
+.friends{
+    color : blue;
+    font-size: 40px;
 }
