@@ -23,16 +23,16 @@ vectorizer_file = open("vectorizer.pickle", "rb")
 vectorizer = pickle.load(vectorizer_file)
 
 print(type(vectorizer))
+while True:
 
+    text = input("Enter a message")
 
-text = input("Enter a message")
+    mb = vectorizer.transform([text])
+    # mb
+    isspam = classifier.predict(mb)[0]
 
-mb = vectorizer.transform([text])
-# mb
-isspam = classifier.predict(mb)[0]
-
-if isspam==1:
-  print("This message is spam")
-else:
-  print("This message is not spam")
+    if isspam==1:
+      print("This message is spam")
+    else:
+      print("This message is not spam")
 
