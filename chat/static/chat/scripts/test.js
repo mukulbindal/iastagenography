@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	// Reference to the chat messages area
-  let $chatWindow = $("#messages");
+//  let $chatWindow = $("#messages");
+  let $chatWindow = $(".chat-bubbles-body");
 
   // Our interface to the Chat service
   let chatClient;
@@ -8,7 +9,6 @@ $(document).ready(function(){
   // A handle to the room's chat channel
   let roomChannel;
 
-  // The server will assign the client a random username - stored here
   let $chat_id;
   let $sender;
   let $receiver;
@@ -43,20 +43,26 @@ getchatkey();
     }
     $chatWindow.append($msg);
   }
-  function printMessage(fromUser, msg) {
+//  function printMessage(fromUser, msg) {
+//    console.log($chat_key);
+//    var $key = CryptoJS.enc.Utf8.parse($chat_key);
+//    var message = decrypt(msg , $key);
+//    let $user = $('<span class="username">').text(fromUser + ":");
+//    if (fromUser === $sender) {
+//      $user.addClass("me");
+//    }
+//    let $message = $('<span class="message">').text(message);
+//    let $container = $('<div class="message-container">');
+//    $container.append($user).append($message);
+//    $chatWindow.append($container);
+//    $chatWindow.scrollTop($chatWindow[0].scrollHeight);
+//  }
+function printMessage(fromUser,msg){
     console.log($chat_key);
     var $key = CryptoJS.enc.Utf8.parse($chat_key);
     var message = decrypt(msg , $key);
-    let $user = $('<span class="username">').text(fromUser + ":");
-    if (fromUser === $sender) {
-      $user.addClass("me");
-    }
-    let $message = $('<span class="message">').text(message);
-    let $container = $('<div class="message-container">');
-    $container.append($user).append($message);
-    $chatWindow.append($container);
-    $chatWindow.scrollTop($chatWindow[0].scrollHeight);
-  }
+
+}
 
   function sendmessage(msg){
   	$.getJSON(

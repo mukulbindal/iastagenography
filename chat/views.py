@@ -22,7 +22,7 @@ def room_detail(request, slug):
     if request.session['user'] in [user.user1.username , user.user2.username]:
         receiver = user.user1.username if request.session['user']!=user.user1.username else user.user2.username
         data = {'room': room,'sender':request.session['user'],'receiver':receiver , 'chat_id':slug}
-        return render(request, 'chat/room_detail.html', data)
+        return render(request, 'chat/chat.html', data)
     else:
         return JsonResponse({"access":"denied"})
 

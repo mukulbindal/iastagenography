@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{room.name}} | TalkChat</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--	<link rel="stylesheet" href="chat.css">-->
+    <link rel="stylesheet" href="{% static "chat/styles/chat.css" %}">
+
+
+    <!-- auto refresh function // dont forget to remove the code from body tag -->
+    <script type="text/JavaScript">
+         <!--
+            function AutoRefresh( t ) {
+               setTimeout("location.reload(true);", t);
+            }
+         //-->
+
+    </script>
+
+</head>
+<body>
+<input type="hidden" id="sender" name="variable" value="{{ sender }}">
+  <input type="hidden" id="receiver" name="variable" value="{{ receiver }}">
+  <input type="hidden" id="chat_id" name="variable" value="{{ chat_id }}">
+<div class="top-bar">
+    <div class="back-button">
+        <button><i class="fa fa-arrow-left"></i></button>
+
+    </div>
+
+    <div class="name-and-status">
+        <div class="name">
+            Mukul Bindal
+        </div>
+        <div class="status">
+            Online
+        </div>
+        <div class="chat-id">
+            Chat ID : HGFIUW8dher29
+        </div>
+    </div>
+
+
+</div>
+<br><br>
+<div class="chat-body-outer">
+    <div class="chat-bubbles-body">
+<!--        <div class="chat-bubble-left">-->
+<!--            <p>Hey dude how are you doing? I thought you will be here without any tension</p>-->
+<!--        </div>-->
+<!--        <div class="chat-bubble-left">-->
+<!--            <p>Are you there?</p>-->
+<!--        </div>-->
+
+<!--        <div class="chat-bubble-right">-->
+<!--            <p>Hey dude how are you doing? I thought you will be here without any tension</p>-->
+<!--        </div>-->
+<!--        <div class="chat-bubble-left">-->
+<!--            <p>Are you there?</p>-->
+<!--        </div>-->
+<!--        <div class="chat-bubble-left">-->
+<!--            <p>Hey dude how are you doing? I thought you will be here without any tension</p>-->
+<!--        </div>-->
+<!--        <div class="chat-bubble-left">-->
+<!--            <p>Are you there?</p>-->
+<!--        </div>-->
+
+<!--        <div class="chat-bubble-right">-->
+<!--            <p>Hey dude how are you doing? I thought you will be here without any tension</p>-->
+<!--        </div>-->
+<!--        <div class="chat-bubble-left">-->
+<!--            <p>Are you there?</p>-->
+<!--        </div>-->
+<!--        <div class="chat-bubble-left">-->
+<!--            <p>Hey dude how are you doing? I thought you will be here without any tension</p>-->
+<!--        </div>-->
+<!--        <div class="chat-bubble-left">-->
+<!--            <p>Are you there?</p>-->
+<!--        </div>-->
+
+<!--        <div class="chat-bubble-right">-->
+<!--            <p>Hey dude how are you doing? I thought you will be here without any tension</p>-->
+<!--        </div>-->
+<!--        <div class="chat-bubble-left">-->
+<!--            <p>Are you there?</p>-->
+<!--        </div>-->
+<!--        <div class="chat-bubble-left">-->
+<!--            <p>Hey dude how are you doing? I thought you will be here without any tension</p>-->
+<!--        </div>-->
+<!--        <div class="chat-bubble-left">-->
+<!--            <p>Are you there?</p>-->
+<!--        </div>-->
+
+<!--        <div class="chat-bubble-right">-->
+<!--            <p>Hey dude how are you doing? I thought you will be here without any tension</p>-->
+<!--        </div>-->
+<!--        <div class="chat-bubble-left">-->
+<!--            <p>Are you there?</p>-->
+<!--        </div>-->
+
+    </div>
+
+</div>
+
+<div class="chat-entry">
+    <form id="message-form">
+        <div class="input-box">
+            <input type="text" name="" class="chat-entry-input-box" id="message-input"
+                   placeholder="Type your message here....">
+        </div>
+        <div class="send-button">
+            <button type="submit" id="send" >
+                <i class="fa fa-paper-plane"></i>
+            </button>
+        </div>
+    </form>
+
+</div>
+<br>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js" crossorigin="anonymous"></script>
+<script src="{% static "chat/scripts/chat.js" %}"></script>
+  <!-- <script src="{% static "chat/scripts/aes.js" %}"></script> -->
+<script type="text/javascript">
+        var input = document.getElementById("message-input");
+        input.addEventListener("keyup",function(event){
+          if(event.keyCode === 13){
+            event.preventDefault();
+            document.getElementById("send").click();
+          }
+        })
+
+</script>
+</body>
+
+</html>
