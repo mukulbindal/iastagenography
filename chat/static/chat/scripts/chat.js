@@ -16,6 +16,12 @@ $(document).ready(function(){
   $chat_id = document.getElementById("chat_id").value;
   $sender = document.getElementById("sender").value ;
   $receiver = document.getElementById("receiver").value ;
+
+  function pageScroll() {
+    window.scrollBy(0,100);
+}
+
+
   function getchatkey(){
   $.getJSON(
       "/getchatkey",
@@ -73,6 +79,7 @@ function printMessage(fromUser,msg){
 //    console.log($container.toString());
     $chatWindow.append($container);
     //$(".chat-body-outer").scrollTop($chatWindow[0].scrollHeight);
+    pageScroll();
 
 
 }

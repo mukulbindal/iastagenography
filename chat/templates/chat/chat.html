@@ -26,19 +26,21 @@
   <input type="hidden" id="chat_id" name="variable" value="{{ chat_id }}">
 <div class="top-bar">
     <div class="back-button">
-        <button><i class="fa fa-arrow-left"></i></button>
+        <a href="{% url 'friends' %}">
+            <button ><i class="fa fa-arrow-left"></i></button>
+        </a>
 
     </div>
 
     <div class="name-and-status">
         <div class="name">
-            Mukul Bindal
+            {{receiver}}
         </div>
         <div class="status">
             Online
         </div>
         <div class="chat-id">
-            Chat ID : HGFIUW8dher29
+            Chat ID : {{chat_id}}
         </div>
     </div>
 
