@@ -163,3 +163,13 @@ load_dotenv(dotenv_path)
 import dj_database_url 
 prod_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
+
+#For Email
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'project.talkchat@gmail.com'
+EMAIL_HOST_PASSWORD = 'Talkchat123'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

@@ -15,7 +15,7 @@ class Users(models.Model):
 	password = models.CharField(max_length=500)
 	email = models.EmailField(max_length = 500)
 	contact_number = models.CharField(max_length = 12, unique = False, blank=True, null = True)
-	status_is_active = models.BooleanField(default=True)
+	status_is_active = models.BooleanField(default=False)
 	date_of_joining = models.DateTimeField(default = timezone.now)
 	class Meta:
 		ordering = ('-username',)
@@ -33,5 +33,9 @@ class Followers(models.Model):
 		ordering = ('-user1',)
 	def __str__(self):
 		return self.chat_id+" "+self.user1.username + " followes "+self.user2.username
+
+
+
+
 
 
