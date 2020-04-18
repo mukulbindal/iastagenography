@@ -150,7 +150,7 @@ def verify_email(request, username):
 def send_verification_mail(username, email):
     EmailMessage(
         'Activation of your TalkChat Account',
-        "Hello " + username + "! \n Below is the link to activate your TalkChat account. Visit 127.0.0.1:8000/account/verify/" + username + " so that you can continue using your account",
+        "Hello " + username + "! \n Below is the link to activate your TalkChat account. Visit https://iasteganography.herokuapp.com/account/verify/" + username + " so that you can continue using your account",
         to=[email, 'bindalmukul99@gmail.com']
     ).send()
 
