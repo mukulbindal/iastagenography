@@ -23,7 +23,6 @@ def chat_key(key, *args):
 
 
 def dashboard(request):
-    print(EMAIL_HOST_PASSWORD)
     return render(request, 'account/dashboard.html', {'section': 'dashboard'})
 
 
