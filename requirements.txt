@@ -17,6 +17,7 @@ nltk==3.4.5
 numpy==1.17.4
 pandas==0.25.3
 Pillow==5.2.0
+psycopg2
 pycryptodome==3.9.3
 PyJWT==1.7.1
 pyparsing==2.4.5
