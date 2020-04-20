@@ -7,6 +7,7 @@ from django.utils import timezone
 # from twilio.jwt.access_token.grants import ChatGrant
 from .models import Room , ReadMessages , UnreadMessages
 from account.models import Followers,Users
+from . import spam_detection
 from Crypto.Cipher import AES
 #fake = Faker()
 
@@ -82,7 +83,7 @@ def receivemsg(request):
     From = Users.objects.filter(username = request.GET.get('From'))
     To = Users.objects.filter(username = request.GET.get('To'))
     message = request.GET.get('message')
-    
+
     row = UnreadMessages(chat_id = chat_id[0] , From = From[0] , To = To[0] , message = message)
     row.save()
     response = {'status':"success" , "message_from_python":message,"time" : str(timezone.now)}
@@ -124,3 +125,8 @@ def readmsg(request):
 
 
 
+def checkspam(request):
+    message = request.GET.get('message')
+    status = (spam_detection.is_spam(message))
+    print(status)
+    return JsonResponse({'status':status})

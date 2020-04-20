@@ -5,6 +5,7 @@
 	--chat-bubble-left-color:rgba(254,254,254,0.3);
 	--chat-bubble-max-width:500px;
 	--chat-bubble-right-color:rgba(50,200,50,0.3);
+	--chat-bubble-spam-color:rgba(200,50,50,0.4);
 	--max-bottom-margin : 0px;
 }
 body{
@@ -146,3 +147,22 @@ body{
 	padding-right: 20px;
 	max-width: var(--chat-bubble-max-width);
 }
+
+.chat-bubble-spam {
+	margin-left:auto;
+	margin-right:0;
+	border-style:solid;
+	border-width:1px;
+	border-color:var(--chat-bubble-right-color);
+	border-radius: 21px;
+	margin-top: 10px;
+	max-width: var(--chat-bubble-max-width);
+	background-color: var(--chat-bubble-spam-color)
+}
+
+.chat-bubble-spam p{
+	padding-left:20px;
+	padding-right: 20px;
+	max-width: var(--chat-bubble-max-width);
+}
+

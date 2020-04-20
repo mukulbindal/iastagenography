@@ -79,7 +79,7 @@ def logout(request):
 
 
 def my_hash_function(password, *args):
-    """Hash a password for storing."""
+    """Hash a password to store."""
     salt = hashlib.sha256(os.urandom(60)).hexdigest().encode('ascii')
     pwdhash = hashlib.pbkdf2_hmac('sha512', password.encode('utf-8'),
                                   salt, 100000)
@@ -100,6 +100,7 @@ def verify_password(stored_password, provided_password):
 
 
 def registration(request):
+    """Registration process """
     try:
         if request.session['user']:
             return render(request, 'account/dashboard.html', {'section': 'dashboard'})
@@ -159,20 +160,12 @@ def verify_email(request, username):
         return HttpResponse("Invalid Url")
 
 
-# from django.core.mail import send_mail
-#
-# send_mail(
-#     'Subject here',
-#     'Here is the message.',
-#     'from@example.com',
-#     ['to@example.com'],
-#     fail_silently=False,
-# )
 def send_verification_mail(username, email):
-    username = encrypt_verification(username)
+    """Auto generated mail for email verification"""
+    username_hashed = encrypt_verification(username)
     EmailMessage(
         'Activation of your TalkChat Account',
-        "Hello " + username + "! \n Below is the link to activate your TalkChat account. Visit https://iasteganography.herokuapp.com/account/verify/" + username + " so that you can continue using your account",
+        "Hello " + username + "! \n Below is the link to activate your TalkChat account. Kindly visit https://iasteganography.herokuapp.com/account/verify/" + username_hashed + " so that you can continue using your account.\n Thanks \n Team TalkChat",
         to=[email, 'bindalmukul99@gmail.com']
     ).send()
 

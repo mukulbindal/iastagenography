@@ -1,3 +1,6 @@
+$.ajaxSetup({
+   async: false
+ });
 $(document).ready(function(){
 	// Reference to the chat messages area
 //  let $chatWindow = $("#messages");
@@ -83,6 +86,19 @@ function printMessage(fromUser,msg){
 
 
 }
+function printSpam(){
+    var message = "The message you are trying to send looks like a spam."
+    let $para = "<p>"+(message)+"</p>";
+    var container;
+    $container = "<div class='chat-bubble-spam'>";
+    $container+=$para+"</div>"
+//    console.log($container.toString());
+    $chatWindow.append($container);
+    //$(".chat-body-outer").scrollTop($chatWindow[0].scrollHeight);
+    pageScroll();
+
+
+}
 
   function sendmessage(msg){
   	$.getJSON(
@@ -94,6 +110,23 @@ function printMessage(fromUser,msg){
       printMessage(sender,data.messagefrompython);
     }
   );
+  }
+  function checkForSpam(msg){
+    let isspam;
+    console.log("function called");
+    $.getJSON(
+        "/checkspam",
+        {
+            message:msg,
+        },
+        function(data)
+        {
+            console.log(data.status);
+            isspam = data.status;
+        }
+    );
+    console.log("is spam var upated? " + isspam);
+    return isspam;
   }
   function sendmessagetoserver(msg){
     $.getJSON(
@@ -195,6 +228,12 @@ function decrypt(ciphertextStr, key) {
     e.preventDefault();
     let $messagetosend = $input.val().trim();
     if($messagetosend.length!=0){
+        if(checkForSpam($messagetosend))
+        {
+            $input.val('');
+            printSpam();
+            return;
+        }
     var $key = CryptoJS.enc.Utf8.parse($chat_key);
     let $encrypted = encrypt($messagetosend,$key);
     console.log($encrypted);
