@@ -168,3 +168,4 @@ EMAIL_HOST_USER = 'project.talkchat@gmail.com'
 EMAIL_HOST_PASSWORD = str(os.environ.get('EMAIL_HOST_PASSWORD'))
 # print("password", EMAIL_HOST_PASSWORD)
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+print("from settings" , __name__)
