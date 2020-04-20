@@ -67,6 +67,9 @@ def login(request):
         return render(request, 'account/login.html', {})
 
 
+dict = "abcdefghijklmnopqrstuvwxyz_0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+
 def logout(request):
     try:
         del request.session['user']
@@ -127,8 +130,26 @@ def registration(request):
         return render(request, 'account/registration.html', {})
 
 
+def encrypt_verification(username):
+    global dict
+    u = list(username[::-1])
+    hash = ""
+    for i in u:
+        hash += dict[(dict.index(i) + 1) % len(dict)]
+    return hash
+
+
+def decrypt_verification(hash):
+    global dict
+    username = ""
+    for i in hash:
+        username += dict[(dict.index(i) - 1)]
+    return username[::-1]
+
+
 def verify_email(request, username):
     try:
+        username = decrypt_verification(username)
         u = Users.objects.get(username=username)
         u.status_is_active = True
         u.save()
@@ -148,6 +169,7 @@ def verify_email(request, username):
 #     fail_silently=False,
 # )
 def send_verification_mail(username, email):
+    username = encrypt_verification(username)
     EmailMessage(
         'Activation of your TalkChat Account',
         "Hello " + username + "! \n Below is the link to activate your TalkChat account. Visit https://iasteganography.herokuapp.com/account/verify/" + username + " so that you can continue using your account",
