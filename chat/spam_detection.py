@@ -3,6 +3,7 @@ from sklearn.linear_model import LogisticRegression
 import pickle
 import os
 import bz2
+
 try:
     import nltk
     nltk.download('stopwords')
@@ -13,6 +14,8 @@ import string
 
 print(os.getcwd())
 print("name is ", __name__)
+
+
 def process_text(text):
     nopunc = [char for char in text if char not in string.punctuation]
     nopunc = ''.join(nopunc)
@@ -34,9 +37,7 @@ print(type(vectorizer))
 
 def is_spam(text):
     mb = vectorizer.transform([text])
-    # mb
     isspam = classifier.predict(mb)[0]
-
     if isspam == 1:
         return True
     else:

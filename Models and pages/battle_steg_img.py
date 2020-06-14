@@ -12,7 +12,7 @@ def generate_message(n):
 
 
 
-img = Image.open("2.png")
+img = Image.open("0.png")
 img.show()
 def listoflist(l):
     op=[]
@@ -33,7 +33,11 @@ preprocessimage(listofpixels)
 print(listofpixels[:10])
 
 
-message = generate_message(25)
+message = generate_message(200)
+
+
+
+
 print("message generated is : ",message)
 listofbytes = [ord(i) for i in message]
 lis = []
