@@ -24,7 +24,7 @@ SECRET_KEY = '#wuv_iskdjfldfsdfskjdfh_&5odgf=0$)dk66$=hk@j6vol40n!#gxr3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['iasteganography.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['project-talkchat.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
