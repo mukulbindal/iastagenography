@@ -13,10 +13,10 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
 <title>{% block title %}{% endblock %}
 	</title>
-	
+
 </head>
 <body>
-<a href="{% url 'dashboard' %}">
+<a class="logo-bg" href="{% url 'dashboard' %}">
 <div class="logo">
 	<img src="{% static 'css/images/talkchat.jpg' %}">
 </div>
@@ -24,7 +24,7 @@
 <div class="logo-text">
 	<font color = "black"><h1>TalkChat</h1></font>
 </div>
-</a>
+</a><br>
 <div class="menu-options">
 	<a href="#" style="hover:blue;">Why talkchat?</a>
 </div>
@@ -45,7 +45,7 @@
 <font color="black">
 Hello {{ request.session.user}},
 </font>
-<a class = "out" href="{% url 'logout' %}" class = "g">Logout</a>
+<a class = "out" href="{% url 'logout' %}">Logout</a>
 </div>
 {% else %}
 

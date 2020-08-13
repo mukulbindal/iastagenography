@@ -8,10 +8,14 @@ body {
     background-image:url('bg.jpg');
 
 }
+.logo-bg{
+    display:block;
+
+}
 .logo{
   float: left;
-position: relative;  
-	top:5px;         
+position: relative;
+	top:5px;
 	left:40px;
 }
 .logo img{
