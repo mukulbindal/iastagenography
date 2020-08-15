@@ -5,7 +5,8 @@
 <div class="users" >
 	<ul>
 	{% for users in all_users %}
-		<li><div  style="color:#000;font-size:24px;"> {{users}}</div>
+		<li>
+			<div  style="color:#000;font-size:24px;"> {{users}}</div>
 			<form action="{% url 'follow' %}" method="POST">
 				<input type="hidden" name="username" value="{{users}}" >
 				{% csrf_token %}
