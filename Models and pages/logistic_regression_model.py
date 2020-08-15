@@ -76,7 +76,7 @@ pred = classifier.predict(X_test)
 print(classification_report(y_test ,pred ))
 
 print('Confusion Matrix: \n', confusion_matrix(y_test,pred))
-print()
+
 print('Accuracy: ', accuracy_score(y_test,pred))
 
 text = input("Enter the input data ")

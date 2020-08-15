@@ -165,7 +165,7 @@ def send_verification_mail(username, email):
     username_hashed = encrypt_verification(username)
     EmailMessage(
         'Activation of your TalkChat Account',
-        "Hello " + username + "! \n Below is the link to activate your TalkChat account. Kindly visit https://iasteganography.herokuapp.com/account/verify/" + username_hashed + " so that you can continue using your account.\n Thanks \n Team TalkChat",
+        "Hello " + username + "! \n Below is the link to activate your TalkChat account. Kindly visit https://project-talkchat.herokuapp.com/account/verify/" + username_hashed + " so that you can continue using your account.\n Thanks \n Team TalkChat",
         to=[email, 'bindalmukul99@gmail.com']
     ).send()
 
